@@ -1,3 +1,5 @@
+import Layout from '@/components/Layout'
+
 export default function Home() {
-  return <main>Initialize Project</main>;
+  return <Layout>Initialize Project</Layout>
 }
