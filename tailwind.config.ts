@@ -13,6 +13,7 @@ const config: Config = {
         gray01: colors.gray01,
         gray02: colors.gray02,
         gray03: colors.gray03,
+        gray04: colors.gray04,
         white: colors.white,
         green: colors.green,
         blue: colors.blue,
