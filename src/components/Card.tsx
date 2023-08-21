@@ -2,12 +2,22 @@ import { RecruitItem } from '@/apis/recruits/types'
 import Image from 'next/image'
 import Star from './iocns/Star'
 import Won from './iocns/Won'
+import Bookmark from './iocns/Bookmark'
 
-export default function Card({ image, company, title, skills, appeal, reward_text, bookmark }: RecruitItem) {
+export default function Card({ id, image, company, title, skills, appeal, reward_text, bookmark }: RecruitItem) {
+  const handleClick = (id: number) => () => {
+    // TODO 즐겨찾기 리덕스 추가
+    console.log(id)
+  }
+
   return (
-    <div className="h-[378px] w-[294px] overflow-hidden rounded-lg border-[1px] border-gray03">
+    <div className="relative h-[378px] w-[294px] overflow-hidden rounded-lg border-[1px] border-gray03">
+      <button className="absolute right-3 top-3 z-[1] cursor-pointer" onClick={handleClick(id)}>
+        <Bookmark />
+      </button>
+
       <div className="relative h-[180px] w-[294px]">
-        <Image src={image} sizes="100%" alt="company thumbnail" fill className="object-cover" priority />
+        <Image src={image} sizes="100%" alt="company thumbnail" fill className="object-cover" priority />d
       </div>
 
       <div className="px-5 py-2">
