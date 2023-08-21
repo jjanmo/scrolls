@@ -1,16 +1,21 @@
-import { RecruitItem } from '@/apis/recruits/types'
 import Card from './Card'
+import { useRecruits } from '@/apis/recruits'
+import Spinner from './iocns/Spinner'
 
-interface Props {
-  recruits: RecruitItem[]
-}
+export default function List() {
+  const { data, isLoading } = useRecruits({ page: 1 })
+  console.log(data)
 
-export default function List({ recruits }: Props) {
+  if (isLoading)
+    return (
+      <div className="flex w-full items-center justify-center opacity-70">
+        <Spinner size={200} />
+      </div>
+    )
+
   return (
     <ul className="mx-auto mt-10 grid w-[900px] grid-cols-3 grid-rows-3 justify-items-center gap-x-20 gap-y-8">
-      {recruits.map((recruit) => (
-        <Card key={recruit.id} {...recruit} />
-      ))}
+      {data?.recruits.map((recruit) => <Card key={recruit.id} {...recruit} />)}
     </ul>
   )
 }
