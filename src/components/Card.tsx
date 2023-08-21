@@ -29,7 +29,7 @@ export default function Card({ id, image, company, title, skills, appeal, reward
         <div className="border-b-[1px] border-gray03 py-3">
           <div className="flex items-center pb-2">
             <Image src={company.logo} width={24} height={24} alt="company icon" />
-            <span className="px-2 text-base font-bold text-gray01">{company.name}</span>
+            <span className="truncate px-2 text-base font-bold text-gray01">{company.name}</span>
             <Star isActive={bookmark} size={16} style={{ transform: 'translateY(-1.5px)' }} />
             <div className="mx-1 flex items-center font-bold text-gray01">
               {company.grade} <span className="mx-1 font-normal text-gray02">({company.grade_count})</span>
