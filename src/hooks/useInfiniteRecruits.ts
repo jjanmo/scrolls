@@ -4,17 +4,21 @@ import { AxiosResponse } from 'axios'
 import { useMemo } from 'react'
 import useSWRInfinite, { SWRInfiniteKeyLoader } from 'swr/infinite'
 
-const LIMIT_PAGE = 3 // 0부터 시작 (실제페이지 - 1)
+export const LIMIT_PAGE = 4
+export const LIMIT_ITEM_PER_PAGE = 9
 
 export default function useInfiniteRecruits() {
+  /** @param pageIndex 0부터 들어옴 */
   const getKey: SWRInfiniteKeyLoader = (pageIndex: number) => {
-    if (pageIndex > LIMIT_PAGE) return null
+    if (pageIndex + 1 > LIMIT_PAGE) return null
 
     return `/jptest?page=${pageIndex + 1}`
   }
   const fetcher = (url: string) => API.get<AxiosResponse<RecruitResponse>>(url).then((res) => res.data.data.recruits)
 
-  const { data, isLoading, setSize, size, error } = useSWRInfinite(getKey, fetcher)
+  const { data, isLoading, isValidating, setSize, size, error } = useSWRInfinite(getKey, fetcher, {
+    revalidateFirstPage: false,
+  })
 
   const recruits = useMemo(() => {
     if (data) {
@@ -27,6 +31,7 @@ export default function useInfiniteRecruits() {
 
   return {
     isLoading,
+    isValidating,
     recruits,
     setPage: setSize,
     currentPage: size,
