@@ -4,7 +4,7 @@ import Footer from './Footer'
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
-    <div className="min-w-[720px]">
+    <div>
       <Nav />
       <main>{children}</main>
       <Footer />
