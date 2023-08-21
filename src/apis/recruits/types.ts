@@ -1,3 +1,12 @@
+export interface Company {
+  id: number
+  logo: string
+  name: string
+  grade: number
+  grade_count: number
+  ratings: { type: string; rating: number }[]
+}
+
 export interface RecruitItem {
   id: number
   bookmark: boolean
@@ -11,21 +20,12 @@ export interface RecruitItem {
   reward_text: string
   job_applicant_type: string
   fee: string
-  company: {
-    id: number
-    logo: string
-    name: string
-    grade: number
-    grade_count: number
-    ratings: { type: string; rating: number }[]
-  }
+  company: Company
   created_at: string
   updated_at: string
 }
 
 export interface RecruitResponse {
-  data: {
-    total_count: number
-    recruits: RecruitItem[]
-  }
+  total_count: number
+  recruits: RecruitItem[]
 }
