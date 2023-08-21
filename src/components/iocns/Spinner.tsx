@@ -23,7 +23,7 @@ export default function Spinner({ size = 100 }: Props) {
             values="1.5 1.5;1 1"
           />
           <animate
-            attributeName="fill-opacity"
+            attributeName="fillOpacity"
             begin="-0.875s"
             dur="1s"
             keyTimes="0;1"
@@ -33,7 +33,7 @@ export default function Spinner({ size = 100 }: Props) {
         </circle>
       </g>
       <g transform="rotate(45 -50.355 121.569)">
-        <circle r="6" fill="#00c362" fill-opacity=".875">
+        <circle r="6" fill="#00c362" fillOpacity=".875">
           <animateTransform
             attributeName="transform"
             begin="-0.75s"
@@ -44,7 +44,7 @@ export default function Spinner({ size = 100 }: Props) {
             values="1.5 1.5;1 1"
           />
           <animate
-            attributeName="fill-opacity"
+            attributeName="fillOpacity"
             begin="-0.75s"
             dur="1s"
             keyTimes="0;1"
@@ -54,7 +54,7 @@ export default function Spinner({ size = 100 }: Props) {
         </circle>
       </g>
       <g transform="rotate(90 -15 65)">
-        <circle r="6" fill="#00c362" fill-opacity=".75">
+        <circle r="6" fill="#00c362" fillOpacity=".75">
           <animateTransform
             attributeName="transform"
             begin="-0.625s"
@@ -65,7 +65,7 @@ export default function Spinner({ size = 100 }: Props) {
             values="1.5 1.5;1 1"
           />
           <animate
-            attributeName="fill-opacity"
+            attributeName="fillOpacity"
             begin="-0.625s"
             dur="1s"
             keyTimes="0;1"
@@ -75,7 +75,7 @@ export default function Spinner({ size = 100 }: Props) {
         </circle>
       </g>
       <g transform="rotate(135 -.355 41.569)">
-        <circle r="6" fill="#00c362" fill-opacity=".625">
+        <circle r="6" fill="#00c362" fillOpacity=".625">
           <animateTransform
             attributeName="transform"
             begin="-0.5s"
@@ -86,7 +86,7 @@ export default function Spinner({ size = 100 }: Props) {
             values="1.5 1.5;1 1"
           />
           <animate
-            attributeName="fill-opacity"
+            attributeName="fillOpacity"
             begin="-0.5s"
             dur="1s"
             keyTimes="0;1"
@@ -96,7 +96,7 @@ export default function Spinner({ size = 100 }: Props) {
         </circle>
       </g>
       <g transform="rotate(180 10 25)">
-        <circle r="6" fill="#00c362" fill-opacity=".5">
+        <circle r="6" fill="#00c362" fillOpacity=".5">
           <animateTransform
             attributeName="transform"
             begin="-0.375s"
@@ -107,7 +107,7 @@ export default function Spinner({ size = 100 }: Props) {
             values="1.5 1.5;1 1"
           />
           <animate
-            attributeName="fill-opacity"
+            attributeName="fillOpacity"
             begin="-0.375s"
             dur="1s"
             keyTimes="0;1"
@@ -117,7 +117,7 @@ export default function Spinner({ size = 100 }: Props) {
         </circle>
       </g>
       <g transform="rotate(-135 20.355 8.431)">
-        <circle r="6" fill="#00c362" fill-opacity=".375">
+        <circle r="6" fill="#00c362" fillOpacity=".375">
           <animateTransform
             attributeName="transform"
             begin="-0.25s"
@@ -128,7 +128,7 @@ export default function Spinner({ size = 100 }: Props) {
             values="1.5 1.5;1 1"
           />
           <animate
-            attributeName="fill-opacity"
+            attributeName="fillOpacity"
             begin="-0.25s"
             dur="1s"
             keyTimes="0;1"
@@ -138,7 +138,7 @@ export default function Spinner({ size = 100 }: Props) {
         </circle>
       </g>
       <g transform="rotate(-90 35 -15)">
-        <circle r="6" fill="#00c362" fill-opacity=".25">
+        <circle r="6" fill="#00c362" fillOpacity=".25">
           <animateTransform
             attributeName="transform"
             begin="-0.125s"
@@ -149,7 +149,7 @@ export default function Spinner({ size = 100 }: Props) {
             values="1.5 1.5;1 1"
           />
           <animate
-            attributeName="fill-opacity"
+            attributeName="fillOpacity"
             begin="-0.125s"
             dur="1s"
             keyTimes="0;1"
@@ -159,7 +159,7 @@ export default function Spinner({ size = 100 }: Props) {
         </circle>
       </g>
       <g transform="rotate(-45 70.355 -71.569)">
-        <circle r="6" fill="#00c362" fill-opacity=".125">
+        <circle r="6" fill="#00c362" fillOpacity=".125">
           <animateTransform
             attributeName="transform"
             begin="0s"
@@ -170,7 +170,7 @@ export default function Spinner({ size = 100 }: Props) {
             values="1.5 1.5;1 1"
           />
           <animate
-            attributeName="fill-opacity"
+            attributeName="fillOpacity"
             begin="0s"
             dur="1s"
             keyTimes="0;1"
