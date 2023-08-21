@@ -1,20 +1,38 @@
-import { RecruitItem } from '@/apis/recruits/types'
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
+import { useDispatch } from 'react-redux'
+import { cloneDeep } from 'lodash'
+import { RecruitItem } from '@/apis/recruits/types'
+import { bookmarkActions } from '@/store/bookmarkSlice'
 import Star from './iocns/Star'
 import Won from './iocns/Won'
 import Bookmark from './iocns/Bookmark'
 
-export default function Card({ id, image, company, title, skills, appeal, reward_text, bookmark }: RecruitItem) {
-  const handleClick = (id: number) => () => {
-    // TODO 즐겨찾기 리덕스 추가
-    console.log(id)
+export default function Card(props: RecruitItem) {
+  const { pathname } = useRouter()
+  const { id, image, company, title, skills, appeal, reward_text, reward, bookmark } = props
+
+  const dispatch = useDispatch()
+  const [isActive, setIsActive] = useState<boolean>(bookmark)
+
+  const handleClick = () => {
+    if (isActive) {
+      dispatch(bookmarkActions.deleteBookmark({ id }))
+    } else {
+      const newItem = cloneDeep(props)
+      dispatch(bookmarkActions.addBookmark({ data: newItem }))
+    }
+    setIsActive((prev) => !prev)
   }
 
   return (
     <div className="relative h-[378px] w-[294px] overflow-hidden rounded-lg border-[1px] border-gray03">
-      <button className="absolute right-3 top-3 z-[1] cursor-pointer" onClick={handleClick(id)}>
-        <Bookmark />
-      </button>
+      {pathname === '/' && (
+        <button className="absolute right-3 top-3 z-[1] cursor-pointer" onClick={handleClick}>
+          <Bookmark isActive={isActive} />
+        </button>
+      )}
 
       <div className="relative h-[180px] w-[294px]">
         <Image src={image} sizes="100%" alt="company thumbnail" fill className="object-cover" priority />d
@@ -30,7 +48,7 @@ export default function Card({ id, image, company, title, skills, appeal, reward
           <div className="flex items-center pb-2">
             <Image src={company.logo} width={24} height={24} alt="company icon" />
             <span className="truncate px-2 text-base font-bold text-gray01">{company.name}</span>
-            <Star isActive={bookmark} size={16} style={{ transform: 'translateY(-1.5px)' }} />
+            <Star size={16} style={{ transform: 'translateY(-1.5px)' }} />
             <div className="mx-1 flex items-center font-bold text-gray01">
               {company.grade} <span className="mx-1 font-normal text-gray02">({company.grade_count})</span>
             </div>
@@ -40,7 +58,7 @@ export default function Card({ id, image, company, title, skills, appeal, reward
 
         <div className="flex items-center py-2">
           <Won />
-          <div className="py- text-sm font-bold">취업 축하금 : {reward_text}</div>
+          <div className="py- text-sm font-bold">취업 축하금 : {reward_text || `${reward / 10000} 만원`}</div>
         </div>
       </div>
     </div>
