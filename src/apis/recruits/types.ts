@@ -17,7 +17,7 @@ export interface RecruitItem {
   matching_keyword: string
   review: string
   reward: number
-  reward_text: string
+  reward_text?: string
   job_applicant_type: string
   fee: string
   company: Company
