@@ -35,7 +35,7 @@ export default function Card(props: RecruitItem) {
       )}
 
       <div className="relative h-[180px] w-[294px]">
-        <Image src={image} sizes="100%" alt="company thumbnail" fill className="object-cover" priority />d
+        <Image src={image} sizes="100%" alt="company thumbnail" fill className="object-cover" priority />
       </div>
 
       <div className="px-5 py-2">
@@ -46,7 +46,9 @@ export default function Card(props: RecruitItem) {
 
         <div className="border-b-[1px] border-gray03 py-3">
           <div className="flex items-center pb-2">
-            <Image src={company.logo} width={24} height={24} alt="company icon" />
+            <div className="relative h-[24px] w-[24px]">
+              <Image src={company.logo} sizes="100%" fill className="object-cover" alt="company icon" />
+            </div>
             <span className="truncate px-2 text-base font-bold text-gray01">{company.name}</span>
             <Star size={16} style={{ transform: 'translateY(-1.5px)' }} />
             <div className="mx-1 flex items-center font-bold text-gray01">
