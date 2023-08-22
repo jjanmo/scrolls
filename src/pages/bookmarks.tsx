@@ -29,11 +29,20 @@ export default function Bookmark() {
       )}
 
       {bookmarks.length > 0 && (
-        <ul className="mx-auto my-10 grid w-[900px] grid-cols-3 justify-items-center gap-x-20 gap-y-8">
-          {bookmarks.map((bookmark) => (
-            <Card key={bookmark.id} {...bookmark} />
-          ))}
-        </ul>
+        <>
+          <ul className="mx-auto my-10 grid w-[900px] grid-cols-3 justify-items-center gap-x-20 gap-y-8">
+            {bookmarks.map((bookmark) => (
+              <Card key={bookmark.id} {...bookmark} />
+            ))}
+          </ul>
+
+          <div className="mx-auto my-8 w-[900px] text-left text-sm text-gray02">
+            <details>
+              <summary>참고</summary>
+              페이지를 변경하면 북마크는 리셋됩니다. 😇 <br /> 자세한 내용은 README 🗒️
+            </details>
+          </div>
+        </>
       )}
     </Layout>
   )
