@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray04  mt-14 flex flex-col items-center pb-8 pt-6">
+    <footer className="flex h-28 flex-col items-center justify-center bg-gray04">
       <div className="mx-auto w-[1000px]">
         <div className="mb-3 text-left text-[13px] font-bold text-gray02">(주)브레인커머스</div>
         <div className="w-full text-left text-[13px] text-gray02">

@@ -6,7 +6,7 @@ export default function Layout({ children }: PropsWithChildren) {
   return (
     <div>
       <Nav />
-      <main>{children}</main>
+      <main className="min-h-[calc(100vh-7rem)] pt-[3.5rem]">{children}</main>
       <Footer />
     </div>
   )
