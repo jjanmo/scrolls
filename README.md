@@ -1,4 +1,6 @@
-# Infinite Scroll
+# Scrolls
+
+> 다양한 스크롤 기능을 여러가지 코드로 구현해보자.
 
 ## Install & Start
 
