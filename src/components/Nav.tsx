@@ -13,14 +13,26 @@ export default function Nav() {
         </Link>
       </div>
       <ul className="ml-48 flex h-full justify-start">
-        <li className={`mx-3 ${pathname === '/' && 'border-b-2 border-green'}`}>
-          <Link href="/" className="flex h-full w-full items-center px-5 text-gray01 hover:text-green">
-            채용
+        <li className={`mx-3 border-b-2 ${pathname === '/' ? 'border-theme3' : 'border-transparent'}`}>
+          <Link href="/" className="hover:text-theme3 flex h-full w-full items-center px-5 text-gray01 transition-all">
+            Dev JD
           </Link>
         </li>
-        <li className={`mx-3 ${pathname === '/bookmarks' && 'border-b-2 border-green'}`}>
-          <Link href="/bookmarks" className="flex h-full w-full items-center px-5 text-gray01  hover:text-green">
-            북마크
+        <li className={`mx-3 border-b-2 ${pathname === '/bookmarks' ? 'border-theme3' : 'border-transparent'} `}>
+          <Link
+            href="/bookmarks"
+            className="hover:text-theme3 flex h-full w-full items-center px-5  text-gray01 transition-all"
+          >
+            Bookmarks
+          </Link>
+        </li>
+
+        <li className={`mx-3 border-b-2  ${pathname === '/movies' ? 'border-theme3' : 'border-transparent'}`}>
+          <Link
+            href="/movies"
+            className="hover:text-theme3 flex h-full w-full items-center px-5  text-gray01 transition-all"
+          >
+            Movies
           </Link>
         </li>
       </ul>
