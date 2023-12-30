@@ -17,6 +17,10 @@ const config: Config = {
         white: colors.white,
         green: colors.green,
         blue: colors.blue,
+
+        theme1: colors.theme1,
+        theme2: colors.theme2,
+        theme3: colors.theme3,
       },
     },
   },
