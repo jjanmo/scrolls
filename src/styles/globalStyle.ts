@@ -25,9 +25,6 @@ export const globalStyles = css`
   a {
     text-decoration: none;
     color: inherit;
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
   button {
