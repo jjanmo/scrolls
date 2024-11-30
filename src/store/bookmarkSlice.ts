@@ -1,5 +1,6 @@
-import { RecruitItem } from '@/apis/recruits/types'
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+
+import { RecruitItem } from '@/apis/recruits/types'
 
 export interface PayloadBase {
   id: number

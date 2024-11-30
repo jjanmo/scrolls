@@ -1,6 +1,7 @@
+import styled from '@emotion/styled'
+
 import { FOOTER_HEIGHT, MAX_WIDTH } from '@/constants/styles'
 import { palette } from '@/styles/theme'
-import styled from '@emotion/styled'
 
 export default function Footer() {
   return (

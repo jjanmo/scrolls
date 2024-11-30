@@ -1,7 +1,9 @@
 import { type PropsWithChildren, type FC } from 'react'
-import Header from './Header'
-import Footer from './Footer'
+
 import styled from '@emotion/styled'
+
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 import { FOOTER_HEIGHT, HEADER_HEIGHT, MAX_WIDTH } from '@/constants/styles'
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {

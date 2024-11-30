@@ -1,5 +1,6 @@
-import { palette } from '@/styles/theme'
 import { type FC } from 'react'
+
+import { palette } from '@/styles/theme'
 interface Props {
   size?: number
   style?: React.CSSProperties // 미세조정용!

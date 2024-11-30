@@ -1,7 +1,8 @@
-import Link from 'next/link'
-import Logo from './iocns/Logo'
-import routes from '@/constants/routes'
 import styled from '@emotion/styled'
+import Link from 'next/link'
+
+import Logo from '@/components/iocns/Logo'
+import routes from '@/constants/routes'
 import { HEADER_HEIGHT, MAX_WIDTH } from '@/constants/styles'
 import { palette } from '@/styles/theme'
 
