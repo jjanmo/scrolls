@@ -1,5 +1,4 @@
-import Bookmark from '@/components/iocns/Bookmark'
-import { FC } from 'react'
+import type { FC } from 'react'
 
 interface Route {
   path: string
@@ -11,11 +10,6 @@ const routes: Route[] = [
   {
     path: '/movies',
     text: 'Movies',
-  },
-  {
-    path: '/bookmarks',
-    icon: Bookmark,
-    text: 'Bookmarks',
   },
 ]
 

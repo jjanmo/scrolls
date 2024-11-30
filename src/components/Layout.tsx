@@ -1,13 +1,24 @@
-import { PropsWithChildren } from 'react'
-import Navigation from './Navigation'
+import { type PropsWithChildren, type FC } from 'react'
+import Header from './Header'
 import Footer from './Footer'
+import styled from '@emotion/styled'
+import { FOOTER_HEIGHT, HEADER_HEIGHT, MAX_WIDTH } from '@/constants/styles'
 
-export default function Layout({ children }: PropsWithChildren) {
+const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div>
-      <Navigation />
-      <main className="min-h-[calc(100vh-7rem)] pt-[3.5rem]">{children}</main>
+      <Header />
+      <Main>{children}</Main>
       <Footer />
     </div>
   )
 }
+
+export default Layout
+
+const Main = styled.main`
+  max-width: ${MAX_WIDTH}px;
+  min-height: calc(100vh - ${HEADER_HEIGHT}px - ${FOOTER_HEIGHT}px);
+  padding: 20px;
+  margin: auto;
+`
