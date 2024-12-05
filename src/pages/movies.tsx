@@ -1,5 +1,12 @@
-import Layout from '@/components/Layout'
+import { usePopularMoviesQuery } from '@/queries/tmdb'
 
 export default function Movies() {
-  return <Layout>movies page</Layout>
+  const { data, isPending } = usePopularMoviesQuery()
+
+  return (
+    <>
+      <div>This is Movie Page</div>
+      {isPending ? <div>Loading...</div> : JSON.stringify(data)}
+    </>
+  )
 }
