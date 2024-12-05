@@ -1,20 +1,25 @@
 import { Global } from '@emotion/react'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { HydrationBoundary, QueryClient, QueryClientProvider, type DehydratedState } from '@tanstack/react-query'
 import type { AppProps } from 'next/app'
-import { Provider } from 'react-redux'
 
-import { store } from '@/store/root'
+import Layout from '@/components/Layout'
 import { globalStyles } from '@/styles/globalStyle'
+
+interface AppPropsWithDehydratedState extends AppProps {
+  dehydratedState: DehydratedState
+}
 
 const queryClient = new QueryClient()
 
-export default function App({ Component, ...pageProps }: AppProps) {
+export default function App({ Component, ...pageProps }: AppPropsWithDehydratedState) {
   return (
     <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
+      <HydrationBoundary state={pageProps.dehydratedState}>
         <Global styles={globalStyles} />
-        <Component {...pageProps} />
-      </Provider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </HydrationBoundary>
     </QueryClientProvider>
   )
 }
