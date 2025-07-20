@@ -1,5 +1,4 @@
 import { css } from '@emotion/react'
-import styled from '@emotion/styled'
 import Link from 'next/link'
 
 import Logo from '@/components/icons/Logo'
@@ -30,7 +29,7 @@ export default function Header() {
 }
 
 const containerStyle = css`
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -57,7 +56,7 @@ const logoWrapperStyle = css`
   align-items: center;
   justify-content: center;
 `
-const navStyle = styled.ul`
+const navStyle = css`
   display: flex;
   gap: 20px;
   list-style: none;

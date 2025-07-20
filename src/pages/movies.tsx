@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 
 import Movie from '@/components/Movie'
 import { useInfinitePopularMoviesQuery } from '@/queries/tmdb'
@@ -14,18 +14,21 @@ export default function Movies() {
   if (isPending) return <div>Loading...</div>
 
   return (
-    <div>
-      <List>{movies?.map((movie, index) => <Movie key={`${movie.id}-${index}`} {...movie} />)}</List>
-      <MoreButton onClick={handleMoreClick} disabled={!hasNextPage}>
+    <div css={containerStyle}>
+      <ul css={listStyle}>{movies?.map((movie, index) => <Movie key={`${movie.id}-${index}`} {...movie} />)}</ul>
+      <button css={moreButtonStyle} onClick={handleMoreClick} disabled={!hasNextPage}>
         {isPending ? 'Loading...' : 'More'}
-      </MoreButton>
+      </button>
     </div>
   )
 }
 
-const List = styled.ul`
+const containerStyle = css`
+  padding: 24px 0;
+`
+const listStyle = css`
   width: fit-content;
-  margin: 20px auto;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 140px);
   gap: 8px;
@@ -38,8 +41,7 @@ const List = styled.ul`
     grid-template-columns: repeat(1, 140px);
   }
 `
-
-const MoreButton = styled.button`
+const moreButtonStyle = css`
   width: 160px;
   padding: 4px 0;
   display: block;
