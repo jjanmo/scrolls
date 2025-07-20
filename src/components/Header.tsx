@@ -1,39 +1,46 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
-import Logo from '@/components/iocns/Logo'
+import Logo from '@/components/icons/Logo'
 import routes from '@/constants/routes'
 import { HEADER_HEIGHT, MAX_WIDTH } from '@/constants/styles'
 import { palette } from '@/styles/theme'
 
 export default function Header() {
   return (
-    <Container>
-      <Content>
-        <LogoWrapper>
+    <header css={containerStyle}>
+      <div css={contentStyle}>
+        <div css={logoWrapperStyle}>
           <Link href="/">
             <Logo />
           </Link>
-        </LogoWrapper>
+        </div>
 
-        <Nav>
+        <ul css={navStyle}>
           {routes.map((route) => (
-            <RouteItem key={route.path}>
+            <li key={route.path}>
               <Link href={route.path}>{route.text}</Link>
-            </RouteItem>
+            </li>
           ))}
-        </Nav>
-      </Content>
-    </Container>
+        </ul>
+      </div>
+    </header>
   )
 }
 
-const Container = styled.header`
+const containerStyle = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   height: ${HEADER_HEIGHT}px;
-  color: ${palette.theme4};
   border-bottom: 1px solid ${palette.theme1};
+  color: ${palette.theme4};
+  background-color: ${palette.white};
 `
-const Content = styled.div`
+const contentStyle = css`
   width: 100%;
   max-width: ${MAX_WIDTH}px;
   height: 100%;
@@ -43,17 +50,15 @@ const Content = styled.div`
   align-items: center;
   justify-content: space-between;
 `
-
-const LogoWrapper = styled.div`
+const logoWrapperStyle = css`
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 `
-const Nav = styled.ul`
+const navStyle = styled.ul`
   display: flex;
   gap: 20px;
   list-style: none;
 `
-const RouteItem = styled.li``
