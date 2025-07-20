@@ -12,22 +12,18 @@
     "@emotion/css": "^11.13.5",
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
-    "@reduxjs/toolkit": "^1.9.5",
     "@tanstack/react-query": "^5.62.2",
     "axios": "^1.7.8",
     "lodash": "^4.17.21",
     "next": "^15.0.3",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-redux": "^8.1.2",
-    "redux-logger": "^3.0.6"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.197",
     "@types/node": "^22.10.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@types/redux-logger": "^3.0.9",
     "@typescript-eslint/parser": "^8.16.0",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
