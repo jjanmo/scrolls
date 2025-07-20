@@ -1,9 +1,10 @@
-import { type FC } from 'react'
+import type { CSSProperties, FC } from 'react'
 
 import { palette } from '@/styles/theme'
+
 interface Props {
   size?: number
-  style?: React.CSSProperties // 미세조정용!
+  style?: CSSProperties // 미세조정용!
 }
 
 const Star: FC<Props> = ({ size = 14, style }) => {
