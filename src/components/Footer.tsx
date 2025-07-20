@@ -1,12 +1,28 @@
+import styled from '@emotion/styled'
+
+import { FOOTER_HEIGHT, MAX_WIDTH } from '@/constants/styles'
+import { palette } from '@/styles/theme'
+
 export default function Footer() {
   return (
-    <footer className="flex h-28 flex-col items-center justify-center bg-gray04">
-      <div className="mx-auto w-[1000px]">
-        <div className="mb-3 text-left text-[13px] font-bold text-gray02">© 2024 Scrolls</div>
-        <div className="w-full text-left text-[13px] text-gray02">
-          Phone 1234-1234 (10:00~17:00 / 점심시간 13:00~14:00) (주말 및 공휴일 휴무) | Email : help@scrolls.com
-        </div>
-      </div>
-    </footer>
+    <Container>
+      <Content>© 2024 Scrolls</Content>
+    </Container>
   )
 }
+
+const Container = styled.footer`
+  height: ${FOOTER_HEIGHT}px;
+  padding: 0 20px;
+  border-top: 1px solid ${palette.theme4};
+`
+const Content = styled.div`
+  width: 100%;
+  max-width: ${MAX_WIDTH}px;
+  height: 100%;
+  padding: 0 20px;
+  margin: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+`

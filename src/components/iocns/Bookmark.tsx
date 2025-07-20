@@ -1,8 +1,9 @@
+import type { FC } from 'react'
 interface Props {
   isActive?: boolean
 }
 
-export default function Bookmark({ isActive = false }: Props) {
+const Bookmark: FC<Props> = ({ isActive = false }) => {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect opacity="0.6" width="28" height="28" rx="4" fill="#323438" />
@@ -20,3 +21,5 @@ export default function Bookmark({ isActive = false }: Props) {
     </svg>
   )
 }
+
+export default Bookmark

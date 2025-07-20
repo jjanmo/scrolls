@@ -1,20 +1,15 @@
-import { Provider } from 'react-redux'
+import { Global } from '@emotion/react'
 import type { AppProps } from 'next/app'
-import { SWRConfig } from 'swr'
+import { Provider } from 'react-redux'
+
 import { store } from '@/store/root'
-import '@/styles/globals.css'
+import { globalStyles } from '@/styles/globalStyle'
 
 export default function App({ Component, ...pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <SWRConfig
-        value={{
-          dedupingInterval: 200,
-          revalidateOnFocus: false,
-        }}
-      >
-        <Component {...pageProps} />
-      </SWRConfig>
+      <Global styles={globalStyles} />
+      <Component {...pageProps} />
     </Provider>
   )
 }

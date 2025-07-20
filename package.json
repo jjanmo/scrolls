@@ -1,37 +1,41 @@
 {
-  "name": "infinite-scroll",
-  "version": "0.1.0",
+  "name": "scrolls",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --fix"
   },
   "dependencies": {
+    "@emotion/css": "^11.13.5",
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
     "@reduxjs/toolkit": "^1.9.5",
-    "@types/node": "20.5.0",
-    "@types/react": "18.2.20",
-    "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.15",
-    "axios": "^1.4.0",
-    "eslint": "8.47.0",
-    "eslint-config-next": "13.4.18",
+    "axios": "^1.7.8",
     "lodash": "^4.17.21",
-    "next": "13.4.18",
-    "postcss": "8.4.28",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "next": "^15.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-redux": "^8.1.2",
     "redux-logger": "^3.0.6",
-    "swr": "^2.2.1",
-    "tailwindcss": "3.3.3",
-    "typescript": "5.1.6"
+    "swr": "^2.2.1"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.197",
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "@types/redux-logger": "^3.0.9",
-    "prettier": "^3.0.2",
-    "prettier-plugin-tailwindcss": "^0.5.3"
-  }
+    "@typescript-eslint/parser": "^8.16.0",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-no-relative-import-paths": "^1.5.5",
+    "prettier": "^3.4.1",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

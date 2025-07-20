@@ -1,11 +1,13 @@
-import { colors } from '@/styles/theme'
+import { type FC } from 'react'
+
+import { palette } from '@/styles/theme'
 
 interface Props {
   size?: number
   color?: string
 }
 
-export default function Logo({ size = 28, color = colors.theme3 }: Props) {
+const Logo: FC<Props> = ({ size = 28, color = palette.theme4 }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} version="1.0" viewBox="0 0 256 256">
       <path
@@ -29,3 +31,5 @@ export default function Logo({ size = 28, color = colors.theme3 }: Props) {
     </svg>
   )
 }
+
+export default Logo
