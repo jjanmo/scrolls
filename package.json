@@ -20,6 +20,7 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.13.5",
     "@types/lodash": "^4.14.197",
     "@types/node": "^22.10.0",
     "@types/react": "^18.3.12",
